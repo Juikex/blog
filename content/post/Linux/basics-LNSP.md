@@ -1,11 +1,14 @@
 +++
 title = '电子基建'
 date = 2023-12-01T15:13:43+08:00
-draft = true
+draft = false
+keywords = ["Archlinux","服务器"]
 tags = ["Linux","服务器","内网穿透"]
+description = "Archlinux服务器基础建设,一些常用基础软件配置"
 +++
 
-记录一些平常用到的基础服务及配置，服务器是低功耗主机挂几块硬盘，系统Archlinux。公网ip买云服务器frp穿透
+记录一些平常用到的基础服务及配置，服务器是低功耗主机挂几块硬盘，系统Archlinux。公网ip买云服务器使用frp穿透内网。
+<!--more-->
 ## Linux
 国内最近的镜像站下载ArchlinuxISO烧录到U盘，主板固件不是很老的话都可以用UEFI启动。定制需求不是很大的话没必要按Archwiki的方法敲命令，使用
 ```
@@ -13,7 +16,7 @@ arch-install
 ```
 解放双手，TUI界面选择自己需要的配置`insatll`即可。
 
-## samba 
+## samba
 smb在各个平台均有支持，使用比较便捷。
 
 安装`samba`软件包。

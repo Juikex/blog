@@ -3,7 +3,10 @@ title = 'KVM虚拟机PCI直通+Looking Glass'
 date = 2022-07-11T15:13:43+08:00
 draft = false
 math = true
+keywords = ["Archlinux","KVM虚拟机","PCI直通","LookingGlass"]
 tags = ["Linux","虚拟机","PCI直通"]
+description = "Archlinux上使用KVM部署虚拟机，LookingGlass配置"
+summary= "Archlinux上使用KVM-Qemu部署虚拟机，LookingGlass配置低延迟操控windows虚拟机"
 +++
 
 ## 名词解释
@@ -36,7 +39,7 @@ GRUB_CMDLINE_LINUX_DEFAULT="intel_iommu=on iommu=pt"
 ```
 #!/bin/bash
 shopt -s nullglob
-for d in /sys/kernel/iommu_groups/*/devices/*; do 
+for d in /sys/kernel/iommu_groups/*/devices/*; do
     n=${d#*/iommu_groups/*}; n=${n%%/*}
     printf 'IOMMU Group %s ' "$n"
     lspci -nns "${d##*/}"
@@ -90,7 +93,7 @@ $$\lceil \dfrac{Hight\times Width \times 8}{1024 \times 1024} + 10 \rceil = 2^n$
 
 创建共享内存`/etc/tmpfiles.d/10-looking-glass.conf`:
 ```
-f	/dev/shm/looking-glass	0660	$USER	kvm	
+f	/dev/shm/looking-glass	0660	$USER	kvm
 ```
 替换为自己的用户，运行：
 ```

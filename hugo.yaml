@@ -10,16 +10,15 @@ buildExpired: false
 
 minify:
   disableXML: true
-  minifyOutput: true
-    
+  minifyOutput: false
+
 params:
-  #env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: Juikex/Blog
-  description: "Linux,Chemical and Electric"
+  description: "juikex的备忘录,Linux,机械,材料,3D打印"
   keywords: [Blog, Linux, Chemical, Machine, 3d print]
   author: Juikex/橘柯
-  # author: ["Me", "You"] # multiple authors
-  images: ["<link or path of image for opengraph, twitter-cards>"]
+  images: ["./favicon.png"]
   DateFormat: "January 2, 2006"
   defaultTheme: auto # dark, light
   disableThemeToggle: false
@@ -42,15 +41,15 @@ params:
   assets:
     # disableHLJS: true # to disable highlight.js
     # disableFingerprinting: true
-    favicon: "<link / abs url>"
-    favicon16x16: "<link / abs url>"
-    favicon32x32: "<link / abs url>"
-    apple_touch_icon: "<link / abs url>"
-    safari_pinned_tab: "<link / abs url>"
+    favicon: "./favicon.png"
+    favicon16x16: "./favicon16x16.png"
+    favicon32x32: "./favicon32x32.png"
+    apple_touch_icon: "./favicon32x32.png"
+    safari_pinned_tab: "./favicon.svg"
 
   label:
     text: "Juikex/blog"
-    icon: /apple-touch-icon.png
+    icon: "./favicon.png"
     iconHeight: 35
 
   # profile-mode
@@ -69,17 +68,21 @@ params:
         url: tags
 
   # home-info mode
-#  homeInfoParams:
-#    Title: "Hi there \U0001F44B"
-#    Content: Welcome to my blog
+  homeInfoParams:
+    Title: "这里是JuiKex的一些备忘录 \U0001F44B"
+    Content: >
+      欢迎参观
 
-  socialIcons:
-    - name: twitter
-      url: "https://twitter.com/"
-    - name: stackoverflow
-      url: "https://stackoverflow.com"
-    - name: github
-      url: "https://github.com/"
+      - 可能会包含物理、化学、材料、计算机、电子等笔记.
+
+      - 请随意查看，欢迎留言斧正😊.
+
+  #   - name: twitter
+  #     url: "https://twitter.com/"
+  #   - name: stackoverflow
+  #     url: "https://stackoverflow.com"
+  #   - name: github
+  #     url: "https://github.com/"
 
   cover:
     hidden: true # hide everywhere but not in structured data
@@ -97,7 +100,7 @@ params:
     minMatchCharLength: 0
     limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
     keys: ["title", "permalink", "summary", "content"]
-  
+
 outputsg:
   home:
       - HTML
